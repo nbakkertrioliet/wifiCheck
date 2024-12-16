@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wifi Check</title>
+</head>
+<body>
+    <a href="javascript:showAndroidToast(getWIFISSID());"">Get WiFi SSID</a>
+    <a href="javascript:showAndroidToast(getIPAddress());">Get IP</a>
+    <a href="javascript:showAndroidToast(getMacAddress());">Get MAC</a>
+</body>
+<script>
+    function getWIFISSID() {
+        return Android.getWIFISSID();
+    }
+</script>
+</html>
