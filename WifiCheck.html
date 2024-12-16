@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wifi Check</title>
 </head>
-<body>
-    <a href="javascript:showAndroidToast(getWIFISSID());">Get WiFi SSID</a>
-</body>
 <script>
-    function getWIFISSID() {
-        return Android.getWIFISSID();
-    }
+//GET WIFI SSID
+function getWIFISSID() {
+return Android.getWIFISSID();
+}
 </script>
+<a href="javascript:console.log(getWIFISSID());">Get WiFi SSID</a>
 </html>
