@@ -4,17 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wifi Check</title>
-        <script>
+    <script>
         function showAndroidToast(toast){
             Android.showToast(toast);
         }
     </script>
 </head>
+<body>
+    <a href="javascript:showAndroidToast(getWIFISSID());">Get WiFi SSID</a>
+    <a href="javascript:console.log(getMacAddress());">Get MAC Address</a>
+    <a href="javascript:console.log(getIPAddress());">Get IP Address</a>
+</body>
 <script>
-//GET WIFI SSID
-function getWIFISSID() {
-return Android.getWIFISSID();
-}
+    function getWIFISSID() {
+        return Android.getWIFISSID();
+    }
+    function getIPAddress() {
+    return Android.getIPAddress();
+    }
+    function getMacAddress() {
+    return Android.getMacAddress();
+    }
 </script>
-<a href="javascript:showAndroidToast(getWIFISSID());">Get WiFi SSID</a>
 </html>
