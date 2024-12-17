@@ -64,13 +64,17 @@
     <div class="bg"></div>
 </body>
 <script>
-    if (isAppInFocus() == false) {
-    var x = document.getElementById("SLIDER");
-    x.style.display="none";
+    function isAppInFocus() {
+        return Android.isAppInFocus();
     }
     function getScreenBrightness(){
     var slidervalue = document.getElementById("slideRange");
     slidervalue.value = Android.getScreenBrightness();
+
+    if (isAppInFocus() == false) {
+    var x = document.getElementById("SLIDER");
+    x.style.display="none";
+    }
     }
     function getWIFISSID() {
         return Android.getWIFISSID();
