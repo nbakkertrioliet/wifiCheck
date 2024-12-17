@@ -50,47 +50,36 @@
         }
     </style>
 </head>
-<body onload="getScreenBrightness()">
-    <p id="ssid"></p>
-    <br>
+<body onload="load()">
     <div class="container">
+        <p id="ssid"></p>
         <button onclick="javascript:showAndroidToast(getWIFISSID());" class="link">Check SSID</button>
         <button onclick="javascript:showAndroidToast(getMacAddress());" class="link">Check MAC</button>
         <button onclick="javascript:showAndroidToast(getIPAddress());" class="link">Check IP</button>
         <br>
-        <div id="SLIDER">
-            <label for="slideRange">Zet scherm helderheid:</label>
-            <input id="slideRange" type="range" min="1" max="255" >
-        </div>
+        <label for="slideRange">Zet scherm helderheid:</label>
+        <input id="slideRange" type="range" min="1" max="255" >
     </div>
     <div class="bg"></div>
 </body>
 <script>
-    function isAppInFocus() {
-        return Android.isAppInFocus();
-    }
-    function getScreenBrightness(){
-    var slidervalue = document.getElementById("slideRange");
-    slidervalue.value = Android.getScreenBrightness();
-
-    if (isAppInFocus() == false) {
-    var x = document.getElementById("SLIDER");
-    x.style.display="none";
-    }
-    }
     function getWIFISSID() {
-        var ssid = document.getElementById("ssid");
-        ssid.innerHTML = Andoid.getWIFISSID();
         return Android.getWIFISSID();
     }
+
     function getIPAddress() {
     return Android.getIPAddress();
     }
     function getMacAddress() {
     return Android.getMacAddress();
     }
-    function getUniqueIdentifier() {
-    return Android.getUniqueIdentifier();
+
+    // Slider javascript
+    function load(){
+    var slidervalue = document.getElementById("slideRange");
+    slidervalue.value = Android.getScreenBrightness();
+    var ssid = document.getElementById("ssid");
+    ssid.innerHTML = Andoid.getWIFISSID();
     }
     function setScreenBrightness(level) {
         Android.setScreenBrightness(level);
