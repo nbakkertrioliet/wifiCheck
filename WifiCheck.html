@@ -52,16 +52,21 @@
         }
     </style>
 </head>
-<body>
+<body onload="getScreenBrightness()">
+    javascript:getScreenBrightness();
     <div class="container">
         <button onclick="javascript:showAndroidToast(getWIFISSID());" class="link">Check SSID</button>
         <button onclick="javascript:showAndroidToast(getMacAddress());" class="link">Check MAC</button>
         <button onclick="javascript:showAndroidToast(getIPAddress());" class="link">Check IP</button>
-        <input id="slideRange" type="range" min="1" max="255" value="150">
+        <input id="slideRange" type="range" min="1" max="255" >
     </div>
     <div class="bg"></div>
 </body>
 <script>
+    function getScreenBrightness(){
+    var slidervalue = document.getElementById("slideRange");
+    slidervalue.value = Android.getScreenBrightness();
+    }
     function getWIFISSID() {
         return Android.getWIFISSID();
     }
