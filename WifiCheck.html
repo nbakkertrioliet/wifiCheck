@@ -55,9 +55,9 @@
         <h5>Verbonden WIFI-SSID:</h5><p id="ssid"></p>
         <h5>MAC-ADDRESS:</h5><p id="mac"></p>
         <h5>IP-ADDRESS:</h5><p id="ip"></p>
-        <button onclick="javascript:showAndroidToast(getWIFISSID());" class="link">Check SSID</button>
+        <!-- <button onclick="javascript:showAndroidToast(getWIFISSID());" class="link">Check SSID</button>
         <button onclick="javascript:showAndroidToast(getMacAddress());" class="link">Check MAC</button>
-        <button onclick="javascript:showAndroidToast(getIPAddress());" class="link">Check IP</button>
+        <button onclick="javascript:showAndroidToast(getIPAddress());" class="link">Check IP</button> -->
         <br>
         <label for="slideRange">Zet scherm helderheid:</label>
         <input id="slideRange" type="range" min="1" max="255" >
@@ -70,7 +70,7 @@
     slidervalue.value = Android.getScreenBrightness();
     document.getElementById("ssid").innerHTML = Android.getWIFISSID();
     document.getElementById("mac").innerHTML = Android.getMacAddress();
-    document.getElementById("ip").innerHTML = Android.getMacAddress();
+    document.getElementById("ip").innerHTML = Android.getIPAddress();
     }
     function setScreenBrightness(level) {
         Android.setScreenBrightness(level);
