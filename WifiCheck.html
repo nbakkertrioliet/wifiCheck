@@ -52,7 +52,7 @@
 </head>
 <body onload="load()">
     <div class="container">
-        <p id="ssid"></p>
+        <p id="ssid">test</p>
         <button onclick="javascript:showAndroidToast(getWIFISSID());" class="link">Check SSID</button>
         <button onclick="javascript:showAndroidToast(getMacAddress());" class="link">Check MAC</button>
         <button onclick="javascript:showAndroidToast(getIPAddress());" class="link">Check IP</button>
@@ -78,8 +78,7 @@
     function load(){
     var slidervalue = document.getElementById("slideRange");
     slidervalue.value = Android.getScreenBrightness();
-    var ssid = document.getElementById("ssid");
-    ssid.innerHTML = Android.getWIFISSID();
+    document.getElementById("ssid").innerHTML = Android.getWIFISSID();
     }
     function setScreenBrightness(level) {
         Android.setScreenBrightness(level);
