@@ -56,12 +56,18 @@
         <button onclick="javascript:showAndroidToast(getMacAddress());" class="link">Check MAC</button>
         <button onclick="javascript:showAndroidToast(getIPAddress());" class="link">Check IP</button>
         <br>
-        <label for="slideRange">Zet scherm helderheid:</label>
-        <input id="slideRange" type="range" min="1" max="255" >
+        <div id="SLIDER">
+            <label for="slideRange">Zet scherm helderheid:</label>
+            <input id="slideRange" type="range" min="1" max="255" >
+        </div>
     </div>
     <div class="bg"></div>
 </body>
 <script>
+    if (isAppInFocus() == false) {
+    var x = document.getElementById("SLIDER");
+    x.style.display="none";
+    }
     function getScreenBrightness(){
     var slidervalue = document.getElementById("slideRange");
     slidervalue.value = Android.getScreenBrightness();
