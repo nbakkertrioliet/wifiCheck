@@ -51,6 +51,8 @@
     </style>
 </head>
 <body onload="getScreenBrightness()">
+    <p id="ssid"></p>
+    <br>
     <div class="container">
         <button onclick="javascript:showAndroidToast(getWIFISSID());" class="link">Check SSID</button>
         <button onclick="javascript:showAndroidToast(getMacAddress());" class="link">Check MAC</button>
@@ -77,6 +79,8 @@
     }
     }
     function getWIFISSID() {
+        var ssid = document.getElementById("ssid");
+        ssid.innerHTML = Andoid.getWIFISSID();
         return Android.getWIFISSID();
     }
     function getIPAddress() {
