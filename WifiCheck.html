@@ -38,7 +38,7 @@
             margin-left: 25%;
             margin-right: 25%;
             margin-top: 15%;
-            padding: 1em;
+            padding: 2em;
             background-color: red;
             text-decoration: none;
             color: white;
@@ -58,6 +58,7 @@
         <button onclick="javascript:showAndroidToast(getWIFISSID());" class="link">Check SSID</button>
         <button onclick="javascript:showAndroidToast(getMacAddress());" class="link">Check MAC</button>
         <button onclick="javascript:showAndroidToast(getIPAddress());" class="link">Check IP</button>
+        <button onclick="javascript:showAndroidToast(getUniqueIdentifier());" class="link">Device name</button>
     </div>
     <div class="bg"></div>
 </body>
@@ -70,6 +71,9 @@
     }
     function getMacAddress() {
     return Android.getMacAddress();
+    }
+    function getUniqueIdentifier() {
+    return Android.getUniqueIdentifier();
     }
 </script>
 </html>
