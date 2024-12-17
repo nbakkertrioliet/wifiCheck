@@ -26,7 +26,7 @@
         }
         .container{
             min-width:100%;
-            min-height: 100%;
+            min-height: 80%;
             position: fixed;
             left: 0;
             top: 0;
@@ -34,22 +34,29 @@
             text-align: center;
         }
         .link{
-            margin-left:25%;
+            border: 0;
+            margin-left: 25%;
             margin-right: 25%;
-            padding: 0.5em;
+            margin-top: 15%;
+            padding: 1em;
             background-color: red;
             text-decoration: none;
             color: white;
-            border-radius: 1em;
+            border-radius: 0.5em;
             font-family: Arial, Helvetica, sans-serif;
+        }
+        .link:hover{
+            border: 2px solid red;
+            background-color: white;
+            color: red;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <a class="link" href="javascript:showAndroidToast(getWIFISSID());">Get WiFi SSID</a>
-        <a class="link" href="javascript:showAndroidToast(getMacAddress());">Get MAC Address</a>
-        <a class="link" href="javascript:showAndroidToast(getIPAddress());">Get IP Address</a>
+        <button href="javascript:showAndroidToast(getWIFISSID());" class="link">Check SSID</button>
+        <button href="javascript:showAndroidToast(getMacAddress());" class="link">Check MAC</button>
+        <button href="javascript:showAndroidToast(getIPAddress());" class="link">Check IP</button>
     </div>
     <div class="bg"></div>
 </body>
