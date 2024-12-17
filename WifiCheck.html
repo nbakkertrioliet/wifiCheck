@@ -9,11 +9,49 @@
             Android.showToast(toast);
         }
     </script>
+    <style>
+        body{
+            margin: 0;
+            height: 100%;
+        }
+        .bg{
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background-image: url(image/bg.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .container{
+            min-width:100%;
+            min-height: 100%;
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 999;
+            text-align: center;
+        }
+        .link{
+            margin-left:25%;
+            margin-right: 25%;
+            padding: 0.5em;
+            background-color: red;
+            text-decoration: none;
+            color: white;
+            border-radius: 1em;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
 </head>
 <body>
-    <a href="javascript:showAndroidToast(getWIFISSID());">Get WiFi SSID</a>
-    <a href="javascript:showAndroidToast(getMacAddress());">Get MAC Address</a>
-    <a href="javascript:showAndroidToast(getIPAddress());">Get IP Address</a>
+    <div class="container">
+        <a class="link" href="javascript:showAndroidToast(getWIFISSID());">Get WiFi SSID</a>
+        <a class="link" href="javascript:showAndroidToast(getMacAddress());">Get MAC Address</a>
+        <a class="link" href="javascript:showAndroidToast(getIPAddress());">Get IP Address</a>
+    </div>
+    <div class="bg"></div>
 </body>
 <script>
     function getWIFISSID() {
